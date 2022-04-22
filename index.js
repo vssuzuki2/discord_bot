@@ -18,8 +18,7 @@ for(const file of commandFiles){
 }
 function random_item(items)
 {
-  
-return items[Math.floor(Math.random()*items.length)];
+	return items[Math.floor(Math.random()*items.length)];
      
 }
 const items = [
@@ -52,7 +51,6 @@ client.on('message', message =>{
 	const args = message.content.slice(prefix.length).split(/ +/);
 
 	const command = args.shift().toLowerCase();
-
 	if(command === 'ping'){
 		client.commands.get('ping').execute(message, args);
 	} else if(command === 'ban'){
@@ -65,6 +63,10 @@ client.on('message', message =>{
 		client.commands.get('blaze').execute(message, args);
 	} else if(command === 'vaza'){
 		client.commands.get('leave').execute(message, args);
+	} else if(command === 'hadouken'){
+		client.commands.get('hadouken').execute(message, args);
+	} else if(command === 'oniichan'){
+		client.commands.get('oniichan').execute(message, args);
 	}
 	
 });

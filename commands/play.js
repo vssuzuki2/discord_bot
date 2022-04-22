@@ -32,7 +32,7 @@ module.exports = {
                 message.channel.send('leaving channel');
             });
  
-            await message.reply(`:thumbsup: Now Playing ***Your Link!***`)
+            await message.reply(`:thumbsup: TOKANDO ***PUNHETA!***`)
  
             return
         }
@@ -40,10 +40,10 @@ module.exports = {
 		const connection =  await voiceChannel.join();
 
 		const videoFinder = async (query) => {
-			const videoResult = await ytSearch(query);
-			return (videoResult.videos.lenght > 1) ? videoResult.videos[0] : null;
-		}
-
+            const videoResult = await ytSearch(query);
+            return (videoResult.videos.length > 1) ? videoResult.videos[0] : null;
+ 
+        }
 
 		const video = await videoFinder(args.join(' '));
  
@@ -54,9 +54,9 @@ module.exports = {
                 voiceChannel.leave();
             });
  
-            await message.reply(`:thumbsup: TOCANDO ***${video.title}***`)
+            await message.reply(`:thumbsup: TOKANDO ***${video.title}***`)
         } else {
-            message.channel.send('No video results found');
+            message.channel.send('SEM VIDEOS');
         }
     }
 }

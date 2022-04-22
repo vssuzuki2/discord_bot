@@ -1,7 +1,3 @@
-const ytdl = require('ytdl-core');
-
-const ytSearch = require('yt-search');
-
 module.exports = {
 	name:'blaze',
 	description: 'Joins and plays audio',
@@ -14,7 +10,22 @@ module.exports = {
 
 		const connection =  await voiceChannel.join();
 
-        connection.play('./audio/blaze.m4a')
+        const items = [
+            './audio/blaze3.m4a',
+            './audio/blaze4.m4a',
+            './audio/blaze5.mp3',
+            './audio/blaze6.mp3',
+            './audio/blaze7.mp3',
+        ]
+
+        function random_item(items)
+        {
+            return items[Math.floor(Math.random()*items.length)];
+             
+        }
+        blaze = random_item(items);
+
+        connection.play(blaze)
         .on('finish', () =>{
             voiceChannel.leave();
         });
